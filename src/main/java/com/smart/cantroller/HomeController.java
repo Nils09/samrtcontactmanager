@@ -5,6 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -45,6 +46,12 @@ public class HomeController {
         return "signup";
     }
 
+    @GetMapping("/login")
+    public String customeLogin(Model model) {
+        model.addAttribute("title", "Login - Smart Contact Manager");
+        return "login";
+    }
+
     // this handler for register user
     @RequestMapping(value = "/do_register", method = RequestMethod.POST)
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result1,
@@ -62,6 +69,7 @@ public class HomeController {
                 System.out.println("ERROR " + result1.toString());
                 model.addAttribute("user", user);
                 return "signup";
+
             }
 
             user.setRole("ROLE_USER");

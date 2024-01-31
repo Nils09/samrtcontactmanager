@@ -26,14 +26,16 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/index">Login</a>
+                    <a class="nav-link" href="" ><span th:text="${user.name}"></span></a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link" th:href="@{/signup}"  href="#">Signup</a>
-                </li>
+                <form th:action="@{/logout}" method="post">
+         
+                  <button class="button" type="submit">LOGOUT</button>
+              </form>
+         
                 
             </ul>
         </div>
