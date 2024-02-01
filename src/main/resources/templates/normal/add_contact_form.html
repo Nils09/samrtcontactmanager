@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>This is home page</title>
+</head>
+
+<body>
+    <section  >
+        <div class="card  ">
+            <div class="card-body">
+                <h1 class="text-center mt-5 ">Add Contact</h1>
+                <div class="container-fluid mt1"></div>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form action="#"
+                        th:object="${contact}"
+                        enctype="multipart/form-data"
+                        method="post"
+                        th:action="@{/user/process-contact}"
+                        class="mt-2">
+
+                        <!-- first Name -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><span class="fa fa-plus" ></span></span>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter First Name" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><span class="fa fa-user" ></span></span>
+                            <input type="text" class="form-control" id="secondName" name="secondName" placeholder="Enter Last Name" aria-label="secondName" aria-describedby="basic-addon1">
+                          </div>
+                        
+                        <!-- Phone Number -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><span class="fa fa-phone" ></span></span>
+                            <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" aria-label="phone" aria-describedby="basic-addon1">
+                          </div>
+
+                        <!--Email  -->
+                          <div class="input-group mb-3 flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping">@</span>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" aria-label="email" aria-describedby="addon-wrapping">
+                          </div>
+
+                        <!-- Work -->   
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><span class="fa fa-briefcase" ></span></span>
+                            <input type="text" class="form-control" id="work" name="work" placeholder="Enter Work" aria-label="work" aria-describedby="basic-addon1">
+                          </div>
+                        
+                        <!-- contact Discription -->
+                        <div class="form-group mt-3"></div>
+                        <textarea placeholder="Enter Contact Discription" name="description" id="description" class="form-control" rows="10"></textarea>
+
+                        <!-- image -->
+                        <div class="custom-file mt-3">
+                            <input type="file" name="profileImage">
+                        </div>
+
+                        <div class="container mt-3 text-center">
+                            <button class="btn btn-outline-primary">Save Contact</button>
+                        </div>
+
+                    </form>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

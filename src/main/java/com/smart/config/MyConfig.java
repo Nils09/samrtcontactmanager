@@ -28,9 +28,11 @@ public class MyConfig {
         )
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login")
+                        .loginProcessingUrl("/dologin")
                         // .usernameParameter("username")
                         // .passwordParameter("password")
                         .defaultSuccessUrl("/user/index", true)
+
                         .permitAll())
                 .rememberMe(rememberMe -> rememberMe.key("AbcdEfghIjkl..."))
 
